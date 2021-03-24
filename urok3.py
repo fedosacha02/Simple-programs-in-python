@@ -1,8 +1,12 @@
 name = input("Введите имя персонажа: \n")
 familia = input("Введите фамилию персонажа: \n")
 move = input("Введите движение персонажа: \n")
-jump = int(input("Введите силу пріжка персонажа: \n"))
-class Person(name, familia, move, jump):
+jump = input("Введите силу пріжка персонажа: \n")
+try:
+    jump = int(jump)
+except ValueError:
+    print("Вы ввели неправильное значение !")
+class Person():
     def __init__(self, name, familia, moving_person, jumping):
         self.name = name
         self.familia = familia
@@ -13,10 +17,6 @@ class Person(name, familia, move, jump):
 
     def jump(self):
         print(f"Персонаж по имени {self.name} и с фамилией {self.familia} прігнул на вісоту {self.jumping}")
-try:
-    first_person = Person(name, familia, move, jump)
-    first_person.move()
-    first_person.jump()
-except:
-    print("Ві ввели неправильное число!Попробуйте снова!")
-    Person(name, familia, move, jump)
+first = Person(name,familia,move,jump)
+print(first.jump())
+print(first.move())
